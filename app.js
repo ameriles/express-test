@@ -4,6 +4,8 @@ var express    = require('express'),
 
 var app = express();
 
+var port = process.env.PORT || 3000;
+
 mongoose.connect('mongodb://localhost/express-test', function(err) {
   if (err) {
     console.log('connection error', err);
@@ -20,6 +22,6 @@ app.use(bodyParser.urlencoded({
 var countries = require('./routes/countries');
 app.use('/countries', countries);
 
-var server = app.listen(3000, function(){
-  console.log('Listening on port: 3000');
+var server = app.listen(port, function(){
+  console.log('Listening on port: ' + port);
 });
