@@ -4,7 +4,7 @@ var express    = require('express'),
 
 var app = express();
 
-mongoose.connect('mongodb://localhost/test', function(err) {
+mongoose.connect('mongodb://localhost/express-test', function(err) {
   if (err) {
     console.log('connection error', err);
   } else {
